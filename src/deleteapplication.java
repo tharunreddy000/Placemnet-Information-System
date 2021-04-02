@@ -26,7 +26,7 @@ public class deleteapplication extends HttpServlet {
         String studentemail = request.getParameter("reenteremail");
         System.out.println(studentemail);
             try{  
-            	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At"); 
+            	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password); 
                 PreparedStatement ps=con.prepareStatement("delete from applications where email_id like '"+studentemail+"';");  
                 ps.executeUpdate();                
                 con.close();

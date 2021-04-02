@@ -9,9 +9,9 @@
 String delemail = request.getParameter("email");
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
-String database = "lab";
+String database = "project";
 String userid = "root";
-String password = "@9848396526At";
+String password = "391957861537";
 try {
 Class.forName(driver);
 } catch (ClassNotFoundException e) {
@@ -25,7 +25,7 @@ ResultSet resultSet = null;
 <body>
 <%
 try{
-connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab" ,"root", "@9848396526At");
+connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/project" ,"root", "391957861537");
 statement=connection.createStatement();
 String sql ="select * from applications where  Email_Id like '"+delemail+"';";
 resultSet = statement.executeQuery(sql);

@@ -20,7 +20,7 @@ public class teacheraccess extends HttpServlet
       {   
         try {          
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
             ResultSet rs =ps.executeQuery("select * from applications");
             ArrayList<qwerty.user> al=new ArrayList<qwerty.user>();

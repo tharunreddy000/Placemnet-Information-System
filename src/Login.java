@@ -10,6 +10,15 @@ public class Login extends HttpServlet {
         PrintWriter out = response.getWriter();
       String email = request.getParameter("email");
         String pass = request.getParameter("pass");
+        
+        if(email=="admin@gmail.com" && pass=="admin") {
+        	
+        }
+        
+        else {
+        	
+        
+        
         if(Validate.checkUser(email, pass))
         {
         	if(Validate.isTeacher(email)) {
@@ -39,5 +48,6 @@ public class Login extends HttpServlet {
 		}
            
         }
+    }
          
     }  

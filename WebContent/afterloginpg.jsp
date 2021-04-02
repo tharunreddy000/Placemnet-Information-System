@@ -26,8 +26,8 @@ margin-top:3%;
     Profile
   </a>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="apply.jsp													">Edit details</a>
-    <a class="dropdown-item" href="studentcheck.html">Checkstatus</a>
+    <a class="dropdown-item" href="editdetails.html">Edit details</a>
+    <a class="dropdown-item" href="studentcheck.html">Check Status</a>
     <a class="dropdown-item" href="deleteaccount.html">delete account</a>
     <a class="dropdown-item" href="index.jsp">Logout</a>
     

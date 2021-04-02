@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>status</title>
 </head>
 <body>
-<h1>not elgible</h1>
+<h1>You are not eligible</h1>
 </body>
 </html>

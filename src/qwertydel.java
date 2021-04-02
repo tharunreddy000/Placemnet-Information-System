@@ -33,7 +33,7 @@ public class qwertydel extends HttpServlet {
 	    	 PrintWriter out = response.getWriter();
 	         if(Validate.checkUser(email, pass)) {
 	             try{  
-	             	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At"); 
+	             	Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password); 
 	                 PreparedStatement ps=con.prepareStatement("delete from student where email like '"+email+"';"); 
 	                 PreparedStatement ps1=con.prepareStatement("delete from applications where email_id like '"+email+"';"); 
 	                 ps.executeUpdate();

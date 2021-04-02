@@ -31,7 +31,7 @@ public class placementselection extends HttpServlet {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection
-                        ("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+                        ("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             PreparedStatement ps = con.prepareStatement
                         ("insert into  job values(?)");
             ps.setString(1, email);

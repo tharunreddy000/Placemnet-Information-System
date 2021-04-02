@@ -45,7 +45,7 @@ public class reg extends HttpServlet {
             
             //creating connection with the database 
             Connection con = DriverManager.getConnection
-                        ("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+                        ("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
 
             PreparedStatement ps = con.prepareStatement
                         ("insert into student values(?,?,?,?)");

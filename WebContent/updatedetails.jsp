@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="qwerty.user" %>
  <!DOCTYPE html>
 <html>
   <head>
@@ -144,33 +145,35 @@
         <div class="banner">
           <h1>Training Application Form</h1>
         </div>
-        
+        <%
+        user u =(user) request.getAttribute("u");
+        %>
         <div class="item">
           <p>Name</p>
           <div class="name-item">
-            <input type="text" name="name" placeholder="name"/>
+            <input type="text" name="name"  value="<%=u.getName() %>"/>
           </div>
         </div>
         <div class="item">
           <p>Mobile Number:</p>
-          <input type="text" name="mobilenumber" placeholder="mobile number"/>
+          <input type="text" name="mobilenumber" value="<%=u.getMobile() %>"/>
         </div>
         <div class="item">
           <p>Email:</p>
-          <input type="text" name="email" placeholder="email"/>
+          <input type="text" name="email"  value="<%=u.getEmail1() %>"/>
         </div>
         <div class="item">
           <p>AADHAR CARD NUMBER:</p>
-          <input type="text" name="adhar" placeholder="aadhar"/>
+          <input type="text" name="adhar"  value="<%=u.getAdar() %>"/>
         </div>
          <div class="item">
           <p>Date of Birth</p>
-          <input type="date" name="bdate"/>
+          <input type="date" name="bdate" value="<%=u.getDob() %>"/>
           <i class="fas fa-calendar-alt"></i>
         </div>
         <div class="item">
           <p>Address:</p>
-          <input type="text" name="address" placeholder="Street address" />
+          <input type="text" name="address" value="<%=u.getAdd() %>"/>
         </div>
       
         <div class="item">
@@ -191,11 +194,11 @@
      
         <div class="item">
           <p>CGPA:</p>
-          <input type="text" name="CGPA"  placeholder="cgpa"/>
+          <input type="text" name="CGPA" value="<%=u.getCgpa() %>"/>
         </div>
         <div class="item">
           <p>Certificate Link:</p>
-          <input type="text" name="Link"  placeholder="certificate drive link"/>
+          <input type="text" name="Link" value="<%=u.getLink() %>"/>
         </div>
         <div class="item">
           <p>Choose your category:</p>
@@ -211,7 +214,7 @@
         
        
         <div class="btn-block">
-          <button type="submit">Register</button>
+          <button type="submit">Update</button>
         </div>
       </form>
     </div>

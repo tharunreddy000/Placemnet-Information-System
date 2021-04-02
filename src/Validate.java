@@ -1,5 +1,5 @@
 import java.sql.*;
-import com.email.durgesh.Email;
+
 
 public class Validate {
     public static boolean checkUser(String email,String pass) 
@@ -7,7 +7,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             PreparedStatement ps = con.prepareStatement("select * from Student where email=? and pass=?");
             ps.setString(1, email);
             ps.setString(2, pass);
@@ -25,7 +25,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
             ResultSet rs =ps.executeQuery("select * from Student where email like '"+email+"';");
             String val = null;
@@ -49,20 +49,20 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
-            String q="select * from applications where  Email_Id like '"+email+"';";
+            String q="select * from applications where  email like '"+email+"';";
             ResultSet rs =ps.executeQuery(q);
             System.out.println(q);
             int c=0;
             while(rs.next()) {
-            	c++;
+              c++;
             }          
             if(c>0) {
-            	st=true;
+              st=true;
             }
             else {
-            	st=false;
+              st=false;
             }
         }
         catch(Exception e) {
@@ -70,13 +70,13 @@ public class Validate {
         }
         return st;       
         
-    }   
+    }  
     public static String cat(String email) 
     {
     	 String  c="";
         try {          
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
             String q="select  category from applications where  Email_Id like '"+email+"';";
             ResultSet rs =ps.executeQuery(q);
@@ -98,7 +98,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
             ResultSet rs =ps.executeQuery("select * from teacherapproval where id like '"+id+"';");
             String val = null;
@@ -126,7 +126,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
             ResultSet rs =ps.executeQuery("select * from Student where email like '"+email+"';");
             String name=null;
@@ -150,7 +150,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             PreparedStatement ps=con.prepareStatement("update  Student set pass = ? where email like ?");
             ps.setString(1, pass);
             ps.setString(2, email);
@@ -174,7 +174,7 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             PreparedStatement ps = con.prepareStatement("select * from job where email=?");
             ps.setString(1, email);
             ResultSet rs =ps.executeQuery();
@@ -194,9 +194,9 @@ public class Validate {
         boolean st =false;
         try {          
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
             Statement ps = con.createStatement();
-            ResultSet rs =ps.executeQuery("select * from applications where email_id like '"+email+"';");
+            ResultSet rs =ps.executeQuery("select * from applications where email like '"+email+"';");
             String name=null;
             while(rs.next()){
              name=rs.getString(3);
@@ -217,7 +217,7 @@ public class Validate {
     	 boolean st =false;
          try {          
              Class.forName("com.mysql.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab","root","@9848396526At");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root",new Credentials().password);
              Statement ps = con.createStatement();
              ResultSet rs =ps.executeQuery("select * from job where email like '"+email+"';");
              String name1=null;

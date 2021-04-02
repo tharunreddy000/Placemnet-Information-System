@@ -3,6 +3,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,7 +41,9 @@ public class apply extends HttpServlet {
         
         try {
       Class.forName("com.mysql.jdbc.Driver");
-      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lab?autoReconnect=true&useSSL=false","root","@9848396526At");
+      Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project?autoReconnect=true&useSSL=false","root",new Credentials().password);
+      Statement p1 =con.createStatement();
+      p1.execute("delete from applications where email like '"+email_id+"'");
       PreparedStatement ps = con.prepareStatement("insert into  applications values(?,?,?,?,?,?,?,?,?,?)");
          ps.setString(1, StudentName);
          ps.setString(2, mobileno);
