@@ -1,6 +1,6 @@
 
 public class Credentials {
 	String username="root";
-	String password="391957861537";
+	String password="pass";
 	
 }
